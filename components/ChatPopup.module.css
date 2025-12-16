@@ -1,0 +1,149 @@
+/* 🔵 Floating button container (holds circle + text) */
+.popupButton {
+  all: unset;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 99999;
+  text-align: center;
+  transition: transform 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.popupButton:active {
+  transform: scale(0.95);
+}
+
+/* 🟢 Green circular chat icon */
+.iconCircle {
+  width: 70px;
+  height: 70px;
+  background: #0aa06e; /* GTech green */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px; /* Chat icon size */
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.iconCircle:hover {
+  transform: scale(1.08);
+}
+
+/* ✏️ Text under the button */
+.chatLabel {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* 🪟 Chat Window */
+.popupWindow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 380px;
+  height: 520px;
+  max-height: calc(100vh - 40px);
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 100000;
+}
+
+/* Header removed - now using green header from Chatbot component */
+
+/* Chat content area */
+.chatContent {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .popupButton {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .iconCircle {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .chatLabel {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .popupWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    /* Ensure proper mobile viewport */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .chatContent {
+    height: 100%;
+    overflow: hidden;
+  }
+
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .popupButton {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .iconCircle {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
+  .chatLabel {
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .popupWindow {
+    height: 100vh;
+  }
+
+  .popupButton {
+    bottom: 12px;
+    right: 12px;
+  }
+}
