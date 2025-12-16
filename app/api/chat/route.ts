@@ -4,7 +4,7 @@ import { processChatMessage } from '@/lib/chatbot';
 // Route segment config for Vercel
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-export const maxDuration = 30;
+export const maxDuration = 10; // Vercel free tier limit (Pro plan allows up to 300s)
 export const revalidate = 0; // Never cache
 export const fetchCache = 'force-no-store'; // Prevent all caching
 
